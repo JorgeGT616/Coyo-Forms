@@ -25,11 +25,13 @@ DROP TABLE IF EXISTS `encuesta`;
 CREATE TABLE `encuesta` (
   `ID_Encuesta` int(6) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(30) NOT NULL,
-  `Creador` int(9) NOT NULL,
+  `Creador` varchar(100) NOT NULL,
   `Categoría` int(2) NOT NULL,
-  `Descripción` text NOT NULL,
+  `Descripción` tinytext NOT NULL,
   `Imagen` blob DEFAULT NULL,
   `Estado` varchar(20) NOT NULL,
+  `Fecha_de_inicio` date NOT NULL,
+  `Fecha_de_final` date NOT NULL,
   PRIMARY KEY (`ID_Encuesta`),
   KEY `Creador` (`Creador`),
   KEY `Categoría` (`Categoría`),
@@ -57,7 +59,7 @@ DROP TABLE IF EXISTS `número_encuestas`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `número_encuestas` (
   `ID_Registro` int(12) NOT NULL AUTO_INCREMENT,
-  `Usuario` int(9) NOT NULL,
+  `Usuario` varchar(100) NOT NULL,
   `Cantidad` int(12) DEFAULT NULL,
   PRIMARY KEY (`ID_Registro`),
   KEY `Usuario` (`Usuario`),
@@ -83,7 +85,7 @@ DROP TABLE IF EXISTS `número_respuestas`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `número_respuestas` (
   `ID_Registro` int(12) NOT NULL AUTO_INCREMENT,
-  `Usuario` int(9) NOT NULL,
+  `Usuario` varchar(100) NOT NULL,
   `Cantidad` int(12) DEFAULT NULL,
   PRIMARY KEY (`ID_Registro`),
   KEY `Usuario` (`Usuario`),
@@ -137,10 +139,10 @@ DROP TABLE IF EXISTS `respuesta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `respuesta` (
-  `ID_Respuesta` int(10) NOT NULL AUTO_INCREMENT,
-  `Usuario` int(9) NOT NULL,
+  `ID_Respuesta` int(13) NOT NULL,
+  `Usuario` varchar(100) NOT NULL,
   `Pregunta` int(12) NOT NULL,
-  `Respuesta` text NOT NULL,
+  `Respuesta` tinytext NOT NULL,
   `Imagen` blob DEFAULT NULL,
   PRIMARY KEY (`ID_Respuesta`),
   KEY `Usuario` (`Usuario`),
@@ -190,16 +192,16 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
-  `Número_de_cuenta_o_trabajador` int(9) NOT NULL,
+  `Número_de_cuenta_o_trabajador` varchar(100) NOT NULL,
   `Nombre` varchar(40) NOT NULL,
   `Apellido_Pat` varchar(40) NOT NULL,
   `Apellido_Mat` varchar(40) NOT NULL,
-  `Correo_electrónico` text NOT NULL,
+  `Correo_electrónico` tinytext NOT NULL,
   `Sexo` char(1) NOT NULL,
   `Estado` varchar(20) NOT NULL,
-  `CURP_o_RFC` varchar(18) NOT NULL,
+  `CURP_o_RFC` varchar(100) NOT NULL,
   `Fecha_de_nacimiento` date NOT NULL,
-  `Contraseña` varchar(70) NOT NULL,
+  `Contraseña` varchar(100) NOT NULL,
   `Imagen` blob NOT NULL,
   PRIMARY KEY (`Número_de_cuenta_o_trabajador`),
   UNIQUE KEY `CURP_o_RFC` (`CURP_o_RFC`),
@@ -227,4 +229,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-23 17:51:36
+-- Dump completed on 2020-06-23 23:17:49
