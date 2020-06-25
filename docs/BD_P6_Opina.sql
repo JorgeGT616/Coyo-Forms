@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `encuesta`;
 CREATE TABLE `encuesta` (
   `ID_Encuesta` int(6) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(30) NOT NULL,
-  `Creador` blob NOT NULL,
+  `Creador` varchar(100) NOT NULL,
   `Categoría` int(2) NOT NULL,
   `Descripción` tinytext NOT NULL,
   `Imagen` blob DEFAULT NULL,
@@ -59,7 +59,7 @@ DROP TABLE IF EXISTS `número_encuestas`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `número_encuestas` (
   `ID_Registro` int(12) NOT NULL AUTO_INCREMENT,
-  `Usuario` blob NOT NULL,
+  `Usuario` varchar(100) NOT NULL,
   `Cantidad` int(12) DEFAULT NULL,
   PRIMARY KEY (`ID_Registro`),
   KEY `Usuario` (`Usuario`),
@@ -85,7 +85,7 @@ DROP TABLE IF EXISTS `número_respuestas`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `número_respuestas` (
   `ID_Registro` int(12) NOT NULL AUTO_INCREMENT,
-  `Usuario` blob NOT NULL,
+  `Usuario` varchar(100) NOT NULL,
   `Cantidad` int(12) DEFAULT NULL,
   PRIMARY KEY (`ID_Registro`),
   KEY `Usuario` (`Usuario`),
@@ -100,6 +100,36 @@ CREATE TABLE `número_respuestas` (
 LOCK TABLES `número_respuestas` WRITE;
 /*!40000 ALTER TABLE `número_respuestas` DISABLE KEYS */;
 /*!40000 ALTER TABLE `número_respuestas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `opción`
+--
+
+DROP TABLE IF EXISTS `opción`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `opción` (
+  `ID_Opción` int(13) NOT NULL AUTO_INCREMENT,
+  `Opción` tinytext NOT NULL,
+  `Imagen` blob DEFAULT NULL,
+  `Pregunta` int(12) NOT NULL,
+  `Encuesta` int(6) NOT NULL,
+  PRIMARY KEY (`ID_Opción`),
+  KEY `Pregunta` (`Pregunta`),
+  KEY `Encuesta` (`Encuesta`),
+  CONSTRAINT `opción_ibfk_1` FOREIGN KEY (`Pregunta`) REFERENCES `pregunta` (`ID_pregunta`),
+  CONSTRAINT `opción_ibfk_2` FOREIGN KEY (`Encuesta`) REFERENCES `encuesta` (`ID_Encuesta`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `opción`
+--
+
+LOCK TABLES `opción` WRITE;
+/*!40000 ALTER TABLE `opción` DISABLE KEYS */;
+/*!40000 ALTER TABLE `opción` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -140,15 +170,13 @@ DROP TABLE IF EXISTS `respuesta`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `respuesta` (
   `ID_Respuesta` int(13) NOT NULL,
-  `Usuario` blob NOT NULL,
-  `Pregunta` int(12) NOT NULL,
-  `Respuesta` tinytext NOT NULL,
-  `Imagen` blob DEFAULT NULL,
+  `Usuario` varchar(100) NOT NULL,
+  `Respuesta` int(13) NOT NULL,
   PRIMARY KEY (`ID_Respuesta`),
   KEY `Usuario` (`Usuario`),
-  KEY `Pregunta` (`Pregunta`),
+  KEY `Respuesta` (`Respuesta`),
   CONSTRAINT `respuesta_ibfk_1` FOREIGN KEY (`Usuario`) REFERENCES `usuario` (`Número_de_cuenta_o_trabajador`),
-  CONSTRAINT `respuesta_ibfk_2` FOREIGN KEY (`Pregunta`) REFERENCES `pregunta` (`ID_pregunta`)
+  CONSTRAINT `respuesta_ibfk_2` FOREIGN KEY (`Respuesta`) REFERENCES `opción` (`ID_Opción`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -192,19 +220,19 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
-  `Número_de_cuenta_o_trabajador` blob NOT NULL,
+  `Número_de_cuenta_o_trabajador` varchar(100) NOT NULL,
   `Nombre` varchar(40) NOT NULL,
   `Apellido_Pat` varchar(40) NOT NULL,
   `Apellido_Mat` varchar(40) NOT NULL,
-  `Correo_electrónico` tinytext NOT NULL,
+  `Correo_electrónico` blob DEFAULT NULL,
   `Sexo` char(1) NOT NULL,
   `Estado` varchar(20) NOT NULL,
   `CURP_o_RFC` blob NOT NULL,
   `Fecha_de_nacimiento` date NOT NULL,
-  `Contraseña` varchar(100) NOT NULL,
+  `Contraseña` blob NOT NULL,
   `Imagen` blob NOT NULL,
   PRIMARY KEY (`Número_de_cuenta_o_trabajador`),
-  UNIQUE KEY `CURP_o_RFC` (`CURP_o_RFC`),
+  UNIQUE KEY `CURP_o_RFC` (`CURP_o_RFC`) USING HASH,
   UNIQUE KEY `Correo_electrónico` (`Correo_electrónico`) USING HASH,
   CONSTRAINT `CONSTRAINT_1` CHECK (`Sexo` = 'M' or `Sexo` = 'H'),
   CONSTRAINT `CONSTRAINT_2` CHECK (`Estado` = 'Suspendida' or `Estado` = 'No_Suspendida')
@@ -229,4 +257,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-23 23:17:49
+-- Dump completed on 2020-06-25 12:11:05
