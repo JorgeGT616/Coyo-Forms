@@ -150,7 +150,7 @@
   //$idEncuesta[0];//Este es el Id de la Encuesta
   echo "<h4>Id de encuesta: ".$idEncuesta[0]."</h4>";
 
-  echo "<h3>".$pregunta."</h3>";
+  echo "<h3>1. ".$pregunta."</h3>";
   //Inserción a la base de la imagen
   if(isset($_FILES['encuImg']) && $_FILES['encuImg']['error'] == 0)
   {
@@ -158,7 +158,7 @@
     $idEncuTemp = $idEncuesta[0];
     insercionImgEncu($docuTemp,$idEncuTemp,$conexion);
   }
-
+  //Presentación de la imagen en el documento
   if(isset($_FILES['preg1Img']) && $_FILES['preg1Img']['error'] == 0)
   {
     $docuTemp = ($_FILES['preg1Img']);
@@ -170,7 +170,7 @@
   //Inserción de la pregunta 1
   $inserEncu = "INSERT INTO pregunta () VALUES (\"\",\"$pregunta\",\"$idEncuesta[0]\",1,\"\")";
   $intercambio = mysqli_query($conexion, $inserEncu);
-
+  //Recuperación del Id de la pregunta 1
   $consulEncu = "SELECT ID_pregunta FROM pregunta WHERE (Número_de_pregunta = 1) AND (Encuesta = \"$idEncuesta[0]\")";
   $intercambioConsul = mysqli_query($conexion, $consulEncu);
   $idPreg1 = mysqli_fetch_array($intercambioConsul);
@@ -183,11 +183,12 @@
     insercionImgPreg($docuTemp,$idPregTemp,$conexion);
   }
 
-
+  //Colocación de las opciones de la pregunta 1 como van existiendo
   while(isset($_POST['opc'.$opcExist.'1']))
   {
     if(($_POST['opc'.$opcExist.'1']) !== "")
     {
+      //Colocación de la imagen
       if(isset($_FILES['opc'.$opcExist.'1Img']) && $_FILES['opc'.$opcExist.'1Img']['error'] == 0)
       {
         $docuTemp = ($_FILES['opc'.$opcExist.'1Img']);
@@ -206,14 +207,16 @@
       //Inserción a la base de la imagen de la opción correspondiente en pregunta 1
       if(isset($_FILES['opc'.$opcExist.'1Img']) && $_FILES['opc'.$opcExist.'1Img']['error'] == 0)
       {
+        //Se guardan en variables los números necesarios para la inserción de la imagen en la base
         $docuTemp = ($_FILES['opc'.$opcExist.'1Img']);
         $idOpcTemp = $idOpc1[0];
         insercionImgOpc($docuTemp,$idOpcTemp,$conexion);
       }
     }
+    //Secuencia el recorrido por las opciones
     $opcExist = $opcExist + 1;
   }
-
+  //Proceso relacionado a la pregunta 2
   $opcExist = 1;
   if((isset($_POST['preg2']))&&(($_POST['preg2'])!==""))
   {
@@ -226,7 +229,8 @@
     $intercambioConsul = mysqli_query($conexion, $consulEncu);
     $idPreg2 = mysqli_fetch_array($intercambioConsul);
 
-    echo "<h3>".($_POST['preg2'])."</h3>";
+    echo "<h3>2. ".($_POST['preg2'])."</h3>";
+    //Si tiene imagen, se coloca
     if(isset($_FILES['preg2Img']) && $_FILES['preg2Img']['error'] == 0)
     {
       $docuTemp = ($_FILES['preg2Img']);
@@ -234,6 +238,7 @@
       procesadorImg($docuTemp,$opcExistImg);
       $opcExistImg = 0;
     }
+    //Mientras existan opciones estas son procesadas
     while(isset($_POST['opc'.$opcExist.'2']))
     {
       if(($_POST['opc'.$opcExist.'2']) !== "")
@@ -272,7 +277,7 @@
     insercionImgPreg($docuTemp,$idPregTemp,$conexion);
   }
 
-
+  //Se repite el proceso anterior con la pregunta 3
   $opcExist = 1;
   if((isset($_POST['preg3']))&&(($_POST['preg3'])!==""))
   {
@@ -285,7 +290,7 @@
     $intercambioConsul = mysqli_query($conexion, $consulEncu);
     $idPreg3 = mysqli_fetch_array($intercambioConsul);
 
-    echo "<h3>".($_POST['preg3'])."</h3>";
+    echo "<h3>3. ".($_POST['preg3'])."</h3>";
     if(isset($_FILES['preg3Img']) && $_FILES['preg3Img']['error'] == 0)
     {
       $docuTemp = ($_FILES['preg3Img']);
@@ -332,7 +337,7 @@
     insercionImgPreg($docuTemp,$idPregTemp,$conexion);
   }
 
-
+  //Proceso con la pregunta 4
   $opcExist = 1;
   if((isset($_POST['preg4']))&&(($_POST['preg4'])!==""))
   {
@@ -345,7 +350,7 @@
     $intercambioConsul = mysqli_query($conexion, $consulEncu);
     $idPreg4 = mysqli_fetch_array($intercambioConsul);
 
-    echo "<h3>".($_POST['preg4'])."</h3>";
+    echo "<h3>4. ".($_POST['preg4'])."</h3>";
     if(isset($_FILES['preg4Img']) && $_FILES['preg4Img']['error'] == 0)
     {
       $docuTemp = ($_FILES['preg4Img']);
@@ -391,7 +396,7 @@
     insercionImgPreg($docuTemp,$idPregTemp,$conexion);
   }
 
-
+  //Proceso con la pregunta 5
   $opcExist = 1;
   if((isset($_POST['preg5']))&&(($_POST['preg5'])!==""))
   {
@@ -404,7 +409,7 @@
     $intercambioConsul = mysqli_query($conexion, $consulEncu);
     $idPreg5 = mysqli_fetch_array($intercambioConsul);
 
-    echo "<h3>".($_POST['preg5'])."</h3>";
+    echo "<h3>5. ".($_POST['preg5'])."</h3>";
     if(isset($_FILES['preg5Img']) && $_FILES['preg5Img']['error'] == 0)
     {
       $docuTemp = ($_FILES['preg5Img']);
