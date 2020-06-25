@@ -38,7 +38,7 @@ CREATE TABLE `encuesta` (
   CONSTRAINT `encuesta_ibfk_1` FOREIGN KEY (`Creador`) REFERENCES `usuario` (`Número_de_cuenta_o_trabajador`),
   CONSTRAINT `encuesta_ibfk_2` FOREIGN KEY (`Categoría`) REFERENCES `tipo_encuesta` (`ID_Categoría`),
   CONSTRAINT `CONSTRAINT_1` CHECK (`Estado` = 'Abierta' or `Estado` = 'Cerrada')
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,6 +47,7 @@ CREATE TABLE `encuesta` (
 
 LOCK TABLES `encuesta` WRITE;
 /*!40000 ALTER TABLE `encuesta` DISABLE KEYS */;
+INSERT INTO `encuesta` VALUES (1,'Felicidad en la prepa','353535355',4,'Dudas que la vida sea una decepción? Deja de dudarlo y tenlo por seguro, ya que realmente lo es...','','abierta',2020062513,2020062916);
 /*!40000 ALTER TABLE `encuesta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +121,7 @@ CREATE TABLE `opción` (
   KEY `Encuesta` (`Encuesta`),
   CONSTRAINT `opción_ibfk_1` FOREIGN KEY (`Pregunta`) REFERENCES `pregunta` (`ID_pregunta`),
   CONSTRAINT `opción_ibfk_2` FOREIGN KEY (`Encuesta`) REFERENCES `encuesta` (`ID_Encuesta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,6 +130,7 @@ CREATE TABLE `opción` (
 
 LOCK TABLES `opción` WRITE;
 /*!40000 ALTER TABLE `opción` DISABLE KEYS */;
+INSERT INTO `opción` VALUES (1,'Sí','',1,1),(2,'No','',1,1),(3,'Sí','',2,1),(4,'No','',2,1),(5,'A veces','',2,1),(6,'Un día será','',2,1),(7,'Porque directamente lo eres','',3,1),(8,'Porque eres un exagerado','',3,1),(9,'Eres más miserable de lo que crees','',3,1),(10,'Sí','',4,1),(11,'Definitivamente','',4,1),(12,'No','',5,1),(13,'Jamás','',5,1),(14,'Jamás de los jamases','',5,1),(15,'Hoy no fío, mañana sí','',5,1);
 /*!40000 ALTER TABLE `opción` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +151,7 @@ CREATE TABLE `pregunta` (
   KEY `Encuesta` (`Encuesta`),
   CONSTRAINT `pregunta_ibfk_1` FOREIGN KEY (`Encuesta`) REFERENCES `encuesta` (`ID_Encuesta`),
   CONSTRAINT `CONSTRAINT_1` CHECK (`Número_de_pregunta` <= 5 and `Número_de_pregunta` >= 1)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,6 +160,7 @@ CREATE TABLE `pregunta` (
 
 LOCK TABLES `pregunta` WRITE;
 /*!40000 ALTER TABLE `pregunta` DISABLE KEYS */;
+INSERT INTO `pregunta` VALUES (1,'¿Hay una pregunta?',1,1,''),(2,'¿Quieres responder?',1,2,''),(3,'¿Por qué me siento tan miserab',1,3,''),(4,'¿Quieres llegar al final de es',1,4,''),(5,'¿Me perdonas por hacerte perde',1,5,'');
 /*!40000 ALTER TABLE `pregunta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,7 +203,7 @@ CREATE TABLE `tipo_encuesta` (
   `ID_Categoría` int(2) NOT NULL AUTO_INCREMENT,
   `Tipo` varchar(20) NOT NULL,
   PRIMARY KEY (`ID_Categoría`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -209,6 +212,7 @@ CREATE TABLE `tipo_encuesta` (
 
 LOCK TABLES `tipo_encuesta` WRITE;
 /*!40000 ALTER TABLE `tipo_encuesta` DISABLE KEYS */;
+INSERT INTO `tipo_encuesta` VALUES (1,'Académico'),(2,'Cultura'),(3,'Deportes'),(4,'Ciencias');
 /*!40000 ALTER TABLE `tipo_encuesta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,6 +249,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES ('353535355','Temporal','Temporalez','Temporalines','temporal@poruntiempo.com','H','No_Suspendida','TETT065794Cr&YTFtg','0000-00-00','s0yTeMp0r4!','imagenrandom.png');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -257,4 +262,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-25 12:11:05
+-- Dump completed on 2020-06-25 14:27:56
