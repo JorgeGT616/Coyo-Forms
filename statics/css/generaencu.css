@@ -1,0 +1,14 @@
+#columnaFor{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+#botCont{
+  padding-top: 4%;
+}
+.imgPregBord{
+  border: 3px solid black;
+}
+.descripcion{
+  border: 1px solid black
+  background-color: #BDBDBD;
+}
