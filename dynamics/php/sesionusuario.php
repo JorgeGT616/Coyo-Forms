@@ -20,7 +20,7 @@
                   <input class='send' type='submit' value='Iniciar Sesion'>";
       }
       if ($Otro==$Usuario){
-        echo"<form method='post' action='ValidacionSesion.php'>
+        echo"<form method='post' action='InicioAdmin.php'>
               <fieldset>
                 <legend><h3>Ingresa el PIN</h3></legend>
                   <p>Codigo: <input type='password' name='PIN' pattern='[cYp01oRE$6@n3&]{20}' title='Inserta el PIN dado por el admin' required></p>

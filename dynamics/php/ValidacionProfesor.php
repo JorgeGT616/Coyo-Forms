@@ -22,7 +22,6 @@ else {
   $Sexo= $_POST['sexo'];
   $Nacimiento= $_POST['nacimiento'];
   $Mail= $_POST['mail'];
-  $Image= $_POST['imagenperfil'];
   $Status= "No_suspendida";
   $Contraseña=$_POST['passProf'];
   //Declarar en una variable la letra del arreglo que se necesite para poder validar el RFC
@@ -67,6 +66,13 @@ else {
     }
     //Si el contador fue no fue uno sino 0 hara el elseif
     elseif($count == 0){
+      $ruta = "../../statics/img/";
+      $target_path = $ruta . basename( $_FILES['imagenperfil']['name']);
+      if(move_uploaded_file($_FILES['imagenperfil']['tmp_name'], $target_path)) {
+          echo "El archivo ".  basename( $_FILES['imagenperfil']['name']).
+          " ha sido subido";
+          //Variable para guardar el nombre de la imagen
+          $Image= basename( $_FILES['imagenperfil']['name']);
       //Hacer una insercion de los valores que se den
       $sql = "INSERT INTO usuario VALUES ('$NumTrab','$Nombre', '$ApPt', '$ApMt', AES_ENCRYPT('$Mail','password') , '$Sexo', '$Status', AES_ENCRYPT('$RFC','password'), '$Nacimiento', AES_ENCRYPT('$Contraseña','password'), '$Image')";
       //Si se logro la insercion con la conexion hara el if
@@ -82,10 +88,14 @@ else {
        echo"<a href='../../templates/registrousuario.html'>Volver al formulario</a>";
      }
    }
+   else{
+     echo "No se pudo subir la imagen, trate de nuevo, usando los formatos requridos!";
+   }
   }
   else{
     echo"Tus datos no coinciden, porfavor verificalos<br>";
     echo"<a href='../../templates/registrousuario.html'>Volver al formulario</a>";
+  }
   }
 }
 ?>
