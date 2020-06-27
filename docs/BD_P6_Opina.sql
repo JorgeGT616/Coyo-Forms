@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `encuesta`;
 CREATE TABLE `encuesta` (
   `ID_Encuesta` int(6) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(30) NOT NULL,
-  `Creador` varchar(100) NOT NULL,
+  `Creador` int(9) NOT NULL,
   `Categoría` int(2) NOT NULL,
   `Descripción` tinytext NOT NULL,
   `Imagen` blob DEFAULT NULL,
@@ -47,60 +47,8 @@ CREATE TABLE `encuesta` (
 
 LOCK TABLES `encuesta` WRITE;
 /*!40000 ALTER TABLE `encuesta` DISABLE KEYS */;
-INSERT INTO `encuesta` VALUES (1,'Felicidad en la prepa','353535355',4,'Dudas que la vida sea una decepción? Deja de dudarlo y tenlo por seguro, ya que realmente lo es...','','abierta',2020062513,2020062916);
+INSERT INTO `encuesta` VALUES (1,'Felicidad en la prepa',353535355,4,'Dudas que la vida sea una decepción? Deja de dudarlo y tenlo por seguro, ya que realmente lo es...','','abierta',2020062513,2020062916);
 /*!40000 ALTER TABLE `encuesta` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `número_encuestas`
---
-
-DROP TABLE IF EXISTS `número_encuestas`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `número_encuestas` (
-  `ID_Registro` int(12) NOT NULL AUTO_INCREMENT,
-  `Usuario` varchar(100) NOT NULL,
-  `Cantidad` int(12) DEFAULT NULL,
-  PRIMARY KEY (`ID_Registro`),
-  KEY `Usuario` (`Usuario`),
-  CONSTRAINT `número_encuestas_ibfk_1` FOREIGN KEY (`Usuario`) REFERENCES `usuario` (`Número_de_cuenta_o_trabajador`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `número_encuestas`
---
-
-LOCK TABLES `número_encuestas` WRITE;
-/*!40000 ALTER TABLE `número_encuestas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `número_encuestas` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `número_respuestas`
---
-
-DROP TABLE IF EXISTS `número_respuestas`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `número_respuestas` (
-  `ID_Registro` int(12) NOT NULL AUTO_INCREMENT,
-  `Usuario` varchar(100) NOT NULL,
-  `Cantidad` int(12) DEFAULT NULL,
-  PRIMARY KEY (`ID_Registro`),
-  KEY `Usuario` (`Usuario`),
-  CONSTRAINT `número_respuestas_ibfk_1` FOREIGN KEY (`Usuario`) REFERENCES `usuario` (`Número_de_cuenta_o_trabajador`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `número_respuestas`
---
-
-LOCK TABLES `número_respuestas` WRITE;
-/*!40000 ALTER TABLE `número_respuestas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `número_respuestas` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -172,15 +120,15 @@ DROP TABLE IF EXISTS `respuesta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `respuesta` (
-  `ID_Respuesta` int(13) NOT NULL,
-  `Usuario` varchar(100) NOT NULL,
+  `ID_Respuesta` int(13) NOT NULL AUTO_INCREMENT,
+  `Usuario` int(9) NOT NULL,
   `Respuesta` int(13) NOT NULL,
   PRIMARY KEY (`ID_Respuesta`),
   KEY `Usuario` (`Usuario`),
   KEY `Respuesta` (`Respuesta`),
   CONSTRAINT `respuesta_ibfk_1` FOREIGN KEY (`Usuario`) REFERENCES `usuario` (`Número_de_cuenta_o_trabajador`),
   CONSTRAINT `respuesta_ibfk_2` FOREIGN KEY (`Respuesta`) REFERENCES `opción` (`ID_Opción`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,6 +137,7 @@ CREATE TABLE `respuesta` (
 
 LOCK TABLES `respuesta` WRITE;
 /*!40000 ALTER TABLE `respuesta` DISABLE KEYS */;
+INSERT INTO `respuesta` VALUES (1,353535355,2),(2,353535355,5),(3,353535355,7),(4,353535355,11),(5,353535355,15),(6,123456789,1),(7,123456789,5),(8,123456789,8),(9,123456789,11),(10,123456789,15);
 /*!40000 ALTER TABLE `respuesta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -224,11 +173,11 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
-  `Número_de_cuenta_o_trabajador` varchar(100) NOT NULL,
+  `Número_de_cuenta_o_trabajador` int(9) NOT NULL,
   `Nombre` varchar(40) NOT NULL,
   `Apellido_Pat` varchar(40) NOT NULL,
   `Apellido_Mat` varchar(40) NOT NULL,
-  `Correo_electrónico` blob DEFAULT NULL,
+  `Correo_electrónico` blob NOT NULL,
   `Sexo` char(1) NOT NULL,
   `Estado` varchar(20) NOT NULL,
   `CURP_o_RFC` blob NOT NULL,
@@ -249,7 +198,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES ('353535355','Temporal','Temporalez','Temporalines','temporal@poruntiempo.com','H','No_Suspendida','TETT065794Cr&YTFtg','0000-00-00','s0yTeMp0r4!','imagenrandom.png');
+INSERT INTO `usuario` VALUES (123456789,'Lolo','Lala','Gil','nose@estres.com','H','No_Suspendida','123456789ASDFGHJKL','0000-00-00','contrase�a','imagen.jpg'),(353535355,'Temporal','Temporalez','Temporalines','temporal@poruntiempo.com','H','No_Suspendida','TETT065794Cr&YTFtg','0000-00-00','s0yTeMp0r4!','imagenrandom.png');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -262,4 +211,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-25 14:27:56
+-- Dump completed on 2020-06-26 20:38:06
