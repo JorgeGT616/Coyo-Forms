@@ -1,7 +1,7 @@
 //Conjunto de eventos para agregar opciones
 //Agregar Opción en pregunta 1
 var numOpc = 2;
-function agregarOpc()
+function agregarOpc1()
 {
   //Se verifica que la cantidad de opciones sea menor a 10
   if(numOpc < 10)
@@ -12,7 +12,7 @@ function agregarOpc()
     //Esta obtiene como atributo un código de dos dígitos como id para futuros procesos
     encuOpc.setAttribute("id","opc" + numOpc + "1");
     encuOpc.innerHTML = "Opción " + numOpc + ": <input type = 'text' name = 'opc" +
-    numOpc + "1' value = '' maxlength='30' required><input type='file' name='opc" + numOpc + "1Img' value=''>";
+    numOpc + "1' value = '' maxlength='30' pattern='[A-Za-zÁÉÍÓÚáéíóú0-9¿?.,\ ]+' title='Revise sus caracteres especiales' required><input type='file' name='opc" + numOpc + "1Img' value=''>";
     let lista = document.getElementById("listaOpc");
     //Se inserta la opción
     lista.appendChild(encuOpc);
@@ -38,7 +38,7 @@ function agregarOpc2()
     numOpc2++;
     encuOpc.setAttribute("id","opc" + numOpc2 + "2");
     encuOpc.innerHTML = "Opción " + numOpc2 + ": <input type = 'text' name = 'opc" +
-    numOpc2 + "2' value = '' maxlength='30' required><input type='file' name='opc" + numOpc2 + "2Img' value=''>";
+    numOpc2 + "2' value = '' maxlength='30' pattern='[A-Za-zÁÉÍÓÚáéíóú0-9¿?.,\ ]+' title='Revise sus caracteres especiales' required><input type='file' name='opc" + numOpc2 + "2Img' value=''>";
     let lista = document.getElementById("listaOpc2");
     lista.appendChild(encuOpc);
     if(numOpc2 == 3)
@@ -61,7 +61,7 @@ function agregarOpc3()
     numOpc3 = numOpc3 + 1;
     encuOpc.setAttribute("id","opc" + numOpc3 + "3");
     encuOpc.innerHTML = "Opción " + numOpc3 + ": <input type = 'text' name = 'opc" +
-    numOpc3 + "3' value = '' maxlength='30' required><input type='file' name='opc" + numOpc3 + "3Img' value=''>";
+    numOpc3 + "3' value = '' maxlength='30' pattern='[A-Za-zÁÉÍÓÚáéíóú0-9¿?.,\ ]+' title='Revise sus caracteres especiales' required><input type='file' name='opc" + numOpc3 + "3Img' value=''>";
     let lista = document.getElementById("listaOpc3");
     lista.appendChild(encuOpc);
     if(numOpc3 == 3)
@@ -84,7 +84,7 @@ function agregarOpc4()
     numOpc4 = numOpc4 + 1;
     encuOpc.setAttribute("id","opc" + numOpc4 + "4");
     encuOpc.innerHTML = "Opción " + numOpc4 + ": <input type = 'text' name = 'opc" +
-    numOpc4 + "4' value = '' maxlength='30' required><input type='file' name='opc" + numOpc4 + "4Img' value=''>";
+    numOpc4 + "4' value = '' maxlength='30' pattern='[A-Za-zÁÉÍÓÚáéíóú0-9¿?.,\ ]+' title='Revise sus caracteres especiales' required><input type='file' name='opc" + numOpc4 + "4Img' value=''>";
     let lista = document.getElementById("listaOpc4");
     lista.appendChild(encuOpc);
     if(numOpc4 == 3)
@@ -107,7 +107,7 @@ function agregarOpc5()
     numOpc5 = numOpc5 + 1;
     encuOpc.setAttribute("id","opc" + numOpc5 + "5");
     encuOpc.innerHTML = "Opción " + numOpc5 + ": <input type = 'text' name = 'opc" +
-    numOpc5 + "5' value = '' maxlength='30' required><input type='file' name='opc" + numOpc5 + "5Img' value=''>";
+    numOpc5 + "5' value = '' maxlength='30' pattern='[A-Za-zÁÉÍÓÚáéíóú0-9¿?.,\ ]+' title='Revise sus caracteres especiales' required><input type='file' name='opc" + numOpc5 + "5Img' value=''>";
     let lista = document.getElementById("listaOpc5")
     lista.appendChild(encuOpc);
     if(numOpc5 == 3)
@@ -136,12 +136,12 @@ function agregarPreg()
     //Se agrega un campo de texto para la pregunta, dos para las opciones y los archivos
     encuPreg.innerHTML = "<h3>Pregunta: <input type = 'text' name = 'preg"
      + numPreg +
-    "' value = '' maxlength='30' required><br><input type='file' name='preg" +
+    "' value = '' maxlength='30' title='Revise sus caracteres especiales' pattern='[A-Za-zÁÉÍÓÚáéíóú0-9¿?.,\ ]+' required><br><input type='file' name='preg" +
     numPreg + "Img' value=''></h3><div id='preg"
      + numPreg +
-    "'>Opción 1: <input type='text' name='opc1" + numPreg + "' value='' maxlength='30' required><input type='file' name='opc1" +
+    "'>Opción 1: <input type='text' name='opc1" + numPreg + "' value='' maxlength='30' pattern='[A-Za-zÁÉÍÓÚáéíóú0-9¿?.,\ ]+' title='Revise sus caracteres especiales' required><input type='file' name='opc1" +
     numPreg + "Img' value=''><br>Opción 2: <input type='text' name='opc2" +
-    numPreg + "' value='' maxlength='30' required><input type='file' name='opc2" +
+    numPreg + "' value='' maxlength='30' pattern='[A-Za-zÁÉÍÓÚáéíóú0-9¿?.,\ ]+' title='Revise sus caracteres especiales' required><input type='file' name='opc2" +
     numPreg + "Img' value=''></div><div id='listaOpc" + numPreg + "'></div>";
     let lista = document.getElementById("neopreg")
     lista.appendChild(encuPreg);
@@ -158,6 +158,11 @@ function agregarPreg()
       borraPreg.setAttribute("id","botRmvPreg")
       let botoPreg = document.getElementById("botonRemPreg1");
       botoPreg.appendChild(borraPreg);
+    }
+    if(numPreg == 5)
+    {
+      var botAgregPregElim = document.getElementById('agregarPreg');
+      botAgregPregElim.remove();
     }
   }
 }
@@ -244,6 +249,8 @@ function elimPreg1()
   if(numPreg == 5)
   {
     numOpc5 = 2;
+    var regrBotAgregPreg = document.getElementById('agregaPregBotCont');
+    regrBotAgregPreg.innerHTML = "<button id = 'agregarPreg' onclick='agregarPreg()'>Agregar Pregunta</button>";
   }
   else if(numPreg == 4)
   {
