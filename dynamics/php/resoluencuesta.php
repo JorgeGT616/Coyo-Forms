@@ -17,6 +17,7 @@
   //Verifica que exista un código de encuesta
   if(isset($_POST['codEncu']))
   {
+    $existeEncu = false;
     //Al tener el código de la encuesta, se realiza la consulta a la base de datos
     $codEspe = ($_POST['codEncu']);
     $encuAqui = "SELECT * FROM encuesta WHERE ID_Encuesta = \"$codEspe\"";
@@ -24,6 +25,7 @@
     //Mientras existan elementos en el arreglo obtenido se despliegan
     while($columna = mysqli_fetch_array($datosEncu))
     {
+      $existeEncu = true;
       //Esto únicamente ocurre si la encuesta está abierta
       date_default_timezone_set("America/Mexico_City");
       $fechActu = date("Y-m-d");
@@ -117,6 +119,10 @@
       {
         echo "Ya no está vigente";
       }
+    }
+    if($existeEncu === false)
+    {
+      echo "No se encontró encuesta";
     }
   }
   else
