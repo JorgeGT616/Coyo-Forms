@@ -86,9 +86,9 @@
 
   //Variables de tiempo concatenadas para comparación
   $fechInic = explode("-",$fechInic);
-  $fechaInicId = ($fechInic[0].$fechInic[1].$fechInic[2].$horaInic)*1;//Se genera un entero como código de la fecha de inicio
+  $fechaInicId = ((($fechInic[0].$fechInic[1].$fechInic[2])*100)+$horaInic)*1;//Se genera un entero como código de la fecha de inicio
   $fechVenc = explode("-",$fechVenc);
-  $fechaVencId = ($fechVenc[0].$fechVenc[1].$fechVenc[2].$horaVenc)*1;//Se genera un entero como código de la fecha de vencimiento
+  $fechaVencId = ((($fechVenc[0].$fechVenc[1].$fechVenc[2])*100)+$horaVenc)*1;//Se genera un entero como código de la fecha de vencimiento
   date_default_timezone_set("America/Mexico_City");
   $fechActu = date("Y-m-d");
   $fechActu = explode("-",$fechActu);
