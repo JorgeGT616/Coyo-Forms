@@ -1,11 +1,11 @@
 # Coyo-Forms :speech_balloon: :busts_in_silhouette:
-## Equipo Peculiarmente Organizado de las Coyo Encuestas (E.P.O.C.E)
-### :computer: Conformado por: 
-- Gutiérrez Tafoya Jorge
-- Muriel González Diego
-- Ríos Lira Jaasiel  
-- Rosales Olguín Ana Paula
-- Ruíz González Julio Maximiliano
+## Equipo Peculiarmente Organizado de las Coyo Encuestas (E.P.O.C.E.)
+### :computer: :zap: Conformado por: 
+- **Gutiérrez Tafoya Jorge -** Administrador de Encuestas y Archivos.
+- **Muriel González Diego -** Administrador de Diseño y Maquetado.
+- **Ríos Lira Jaasiel -** Administrador de Seguridad y Permisos.
+- **Rosales Olguín Ana Paula -** Administradora de Registros y Usuarios.
+- **Ruíz González Julio Maximiliano -** Administrador de la Base de Datos y Coordinador.
 
 ## Guía de instalación :cd:
 1. Tener instalado XAMPP (version actual).
