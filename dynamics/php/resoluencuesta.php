@@ -31,6 +31,11 @@
       $fechActu = date("Y-m-d");
       $fechActu = explode("-",$fechActu);
       $fechaActuId = ($fechActu[0].$fechActu[1].$fechActu[2].date("H"))*1;//Se genera un entero como código de la fecha actual
+      if(($fechaActuId < $columna[8]))&&($fechaActuId > $columna[7])))
+      {
+        $restFech = "UPDATE encuesta SET Estado=\"abierta\" WHERE ID_Encuesta=\"$codEspe\"";
+        $actuali = mysqli_query($conexion, $restFech);
+      }
       if(($columna[6] == "abierta")&&($fechaActuId < $columna[8]))
       {
         echo
@@ -107,11 +112,6 @@
         echo "<br>
         <input type = 'submit' value = 'Enviar'>
         </form>";
-      }
-      else if(($fechaActuId < $columna[8]))&&($fechaActuId > $columna[7])))
-      {
-        $restFech = "UPDATE encuesta SET Estado=\"abierta\" WHERE ID_Encuesta=\"$codEspe\"";
-        $actuali = mysqli_query($conexion, $restFech);
       }
       else if($fechaActuId >= $columna[8])
       {
