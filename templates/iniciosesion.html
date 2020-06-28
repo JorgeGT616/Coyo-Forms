@@ -3,24 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Incio Sesion</title>
+    <link rel="stylesheet" href="../statics/forms.css">
   </head>
   <body>
-    <form method="post" action="../dynamics/php/sesionusuario.php" >
-      <fieldset>
-        <legend><h3>Selecciona Usuario para inicuar sesion</h3></legend>
-          <br>
-          <br>
-          <!--Tipo cliente-->
-          <p>Tipo de usuario:
-            <select name="usuario">
-              <option>Profesor</option>
-              <option>Alumno</option>
-              <option>Otro</option>
-            </select></p>
-          <br>
-          <br>
-          <input class="send" type="submit" value="Validar">
-        </fieldset>
-      </form>
+    <h1>INICIO DE SESION :D</h1>
+    <!--div en el que se imprimen modales-->
+    <div id="mensaje"></div>
+    <!--div en el que se imprimen los forms de cada usuario y accion-->
+    <div id="inicial" class="desaparecido"></div>
+    <fieldset id="tipo">
+      <legend><h3>Selecciona un Usuario para iniciar sesion</h3></legend><br><br>
+        <!--Tipo cliente-->
+        <button id="profesor">Profesor</button>
+        <button id="alumno">Alumno</button>
+        <button id="otro">Otro</button>
+    </fieldset>
+    <!--enlaces que facilitan movilidad en páginas-->
+    <a href="#" id="regresar" class="desaparecido">Regresar</a>
+    <a href="coyoForms.html">Página principal</a>
+    <a href="registrousuario.html">Registrate</a>
+    <script src="../dynamics/js/inicioSesion.js"></script>
   </body>
 </html>
