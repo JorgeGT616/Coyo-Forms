@@ -3,24 +3,82 @@
   <head>
     <meta charset="utf-8">
     <title>Registro Usuario</title>
-    <link rel="stylesheet" href="../statics/forms.css">
+    <link rel="shortcut icon" href="../statics/media/img/CoyoFormsIcono.ico" />
+    <link rel="stylesheet" href="../statics/css/registroAlumno.css">
+    <link rel="stylesheet" href="../statics/css/forms.css">
   </head>
   <body>
-    <h1>REGISTRO DE USUARIOS :D</h1>
-    <!--div en el que se imprimen modales-->
-    <div id="mensaje"></div>
-    <!--div en el que se imprimen los forms de cada usuario y accion-->
-    <div id="inicial" class="desaparecido"></div>
-      <fieldset id="tipo">
-        <legend><h3>Selecciona tu tipo de Usuario</h3></legend><br><br>
-          <!--Tipo cliente-->
-          <button id="profesor">Profesor</button>
-          <button id="alumno">Alumno</button>
-      </fieldset>
-      <!--enlaces que facilitan movilidad en páginas-->
-      <a href="#" id="regresar" class="desaparecido">Regresar</a>
-      <a href="coyoForms.html">Página principal</a>
-      <a href="iniciosesion.html">Iniciar Sesion</a>
+    <header>
+      <nav> <!-- Barra de navegación  -->
+        <div class="unirseEncuesta">
+          <p>Unirse a una Encuesta</p>
+        </div>
+        <div class="iS">
+          <a href="coyoForms.html">
+          <div class="iniciarSesion">
+            <p>Página Principal</p>
+          </div>
+          </a>
+          <a href="iniciosesion.html">
+          <div class="profesor">
+            <p>Ingresa</p>
+          </div>
+          </a>
+          <a href="#">
+          <div class="alummno">
+            <p>Registro</p>
+          </div>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <section class="container">
+      <!-- <h1>REGISTRO DE USUARIOS</h1>-->
+      <div class="titulo"> <!-- título de la página (rectángulo Azul) -->
+        <div>
+          <p class="inicio">REGISTRO DE USUARIOS</p>
+        </div>
+      </div>
+      <!--div en el que se imprimen modales-->
+      <div id="mensaje"></div>
+      <!--div en el que se imprimen los forms de cada usuario y accion-->
+      <div id="inicial" class="desaparecido"></div>
+        <fieldset id="tipo">
+          <legend><h3>Selecciona tu tipo de Usuario</h3></legend><br><br>
+            <!--Tipo cliente-->
+            <button id="profesor" class="enviar">Profesor</button>
+            <button id="alumno" class="enviar">Alumno</button>
+        </fieldset>
+        <!--enlaces que facilitan movilidad en páginas-->
+        <div class="enlaces">
+          <a href="#" id="regresar" class="desaparecido botonCambiar">Regresar</a>
+          <a href="coyoForms.html" class="botonCambiar">Página principal</a>
+          <a href="iniciosesion.html" class="botonCambiar">Iniciar Sesion</a>
+        </div>
+    </section>
+      <footer>
+        <div class="logo">
+          <img src="../statics/media/img/CoyoFormsLogo.jpg" alt="">
+        </div>
+        <div class="contacto">
+          <div class="redes">
+            <p>Datos de Contacto</p>
+            <a href="https://twitter.com/prepa6_unam?lang=es"><img src="https://seeklogo.com/images/T/twitter-square-black-and-white-logo-962E683117-seeklogo.com.png" alt="Twiter P6"></a>
+            <a href="https://www.facebook.com/prepa6/"><img src="https://cdn3.iconfinder.com/data/icons/rcons-social/32/facebook_fb_social_social_media-512.png" alt="Facebook P6"></a>
+            <a href="https://www.instagram.com/explore/tags/prepa6/?hl=es"><img src="https://image.flaticon.com/icons/png/512/87/87390.png" alt="Instagram P6"></a>
+          <div class="direccion">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d941.0990510362046!2d-99.15662289143005!3d19.35198983024694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf8b434a6ebcd6c83!2sEscuela%20Nacional%20Preparatoria%20N%C2%B0%206%20%22Antonio%20Caso%22%20UNAM!5e0!3m2!1ses-419!2smx!4v1593312628926!5m2!1ses-419!2smx" width="250" height="150" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+        </div>
+          
+        </div>
+        <div class="info">
+          <p>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
+          <p>Información</p>
+          <p>Hipervínculo a la página de Créditos</p>
+          <p>Demás Cosas</p>
+        </div>
+      </footer>
       <script src="../dynamics/js/registroUsuario.js"></script>
   </body>
 </html>

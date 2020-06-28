@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Roboto";
-  src: url(../libs/fontawesome/FONTS/Roboto-Regular.ttf);
+  src: url(../../libs/fontawesome/FONTS/Roboto-Regular.ttf);
 }
 *{
   font-family: "Roboto";
@@ -10,280 +10,615 @@ a{
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
-/*-----------------CONTENIDO DE LA PÁGINA-------------------*/
-.container{
-  display: flex;
-  flex-flow: column wrap;
-  width: 98vw;
-  align-items: center;
-  background-color: #E5E5E5;
-  margin-top: 18vh;
-  margin-bottom: 0vh;
-  margin-left: 0.5vw;
-  z-index: 89;
-}
-.creditos{
-  width: 85%;
-  height: auto;
-  display: flex;
-  flex-flow: row wrap;
-}
-.titulo{
-  background-color: #14213D;
-  width: 100%;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  line-height: 1;
-  padding: 20px;
-  z-index: 99;
-}
-.inicio{
-  font-size: 48px;
-}
-.categoria{
-  font-size: 24px;
-}
-.textos{
-  background-color: rgb(255, 63, 27);
-  text-align: center;
-  font-size: 48px;
-  width: 100%;
-  height: 500px;
-  display: flex;
-  flex-flow: column wrap;
-  animation-name: fondo;
-  animation-duration: 15s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  z-index: 90;
-}
-@keyframes fondo {
-  0%{
+@media (min-width: 400px) and (orientation: portrait) and (min-height: 700px){/*TELÉFONO*/
+  /*-----------------CONTENIDO DE LA PÁGINA-------------------*/
+  .container{
+    display: flex;
+    flex-flow: column wrap;
+    width: 98vw;
+    align-items: center;
+    background-color: #E5E5E5;
+    margin-top: 18vh;
+    margin-bottom: 0vh;
+    margin-left: 0.5vw;
+    z-index: 89;
+  }
+  .creditos{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .titulo{
+    background-color: #14213D;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 1;
+    padding: 20px;
+    z-index: 99;
+  }
+  .inicio{
+    font-size: 48px;
+  }
+  .categoria{
+    font-size: 24px;
+  }
+  .textos{
     background-color: rgb(255, 63, 27);
+    text-align: center;
+    font-size: 36px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-flow: column wrap;
+    animation-name: fondo;
+    animation-duration: 15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    z-index: 90;
   }
-  15%{
-    background-color: rgb(250, 255, 27);
+  @keyframes fondo {
+    0%{
+      background-color: rgb(255, 63, 27);
+    }
+    15%{
+      background-color: rgb(250, 255, 27);
+    }
+    30%{
+      background-color: rgb(52, 255, 27);
+    }
+    45%{
+      background-color: rgb(27, 255, 248);
+    }
+    60%{
+      background-color: rgb(27, 84, 255);
+    }
+    75%{
+        background-color: rgb(223, 27, 255);
+    }
+    90%{
+      background-color: rgb(221, 40, 40);
+    }
+    93%{
+      background-color: rgb(61, 78, 233);
+    }
+    96%{
+      background-color: rgb(61, 233, 109);
+    }
+    100%{
+      background-color: rgb(255, 63, 27);
+    }
   }
-  30%{
-    background-color: rgb(52, 255, 27);
+  .textos>span{
+    position: absolute;
+    align-self: center;
+    z-index: 87;
+    margin-top: 50%;
+    animation-name: desplazamiento;
+    animation-duration: 15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
-  45%{
-    background-color: rgb(27, 255, 248);
+  @keyframes desplazamiento {
+    0%{
+      margin-top: 50%;
+    }
+    15%{
+      margin-top: 30%;
+    }
+    30%{
+      margin-top: 10%;
+    }
+    45%{
+      margin-top: -10%;
+    }
+    60%{
+      margin-top: -30%;
+    }
+    75%{
+      margin-top: -50%;
+    }
+    93%{
+      margin-top: -30%;
+    }
+    96%{
+      margin-top: 10%;
+    }
+    100%{
+      margin-top: 50%;
+    }
   }
-  60%{
-    background-color: rgb(27, 84, 255);
+  .container2{
+    z-index: 99;
+    background-color: #E5E5E5;
+    width: 90%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
   }
-  75%{
-      background-color: rgb(223, 27, 255);
+  form{
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    align-items: center;
+    align-self: center;
   }
-  90%{
-    background-color: rgb(221, 40, 40);
+  button{
+    height: 100px;
+    width: 80%;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 13px;
+    background-color: #FCA311;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
   }
-  93%{
-    background-color: rgb(61, 78, 233);
+  .link{
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding-top: 13px;
   }
-  96%{
-    background-color: rgb(61, 233, 109);
+  button:hover{
+    background-color: #b88026;
   }
-  100%{
+  /*------------------BARRA DE NAVEGACIÓN---------------------*/
+  .menuDesplegable{
+    width: 100px;
+    height: 100px;
+  }
+  .menuDesplegable2{
+    transform: rotate(270deg;);
+  }
+  header>nav{
+    height: 18vh;
+    width: 100vw;
+    background-color: #14213D;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    z-index: 100;
+  }
+  nav>.unirseEncuesta{
+    background-color: #FCA311;
+    margin: 20px;
+    border-radius: 5%;
+    flex-grow: 3;
+    height: 14vh;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  nav>.unirseEncuesta p{
+    font-size: 42px;
+    text-align: center;
+    margin-top: 1.5%;
+  }
+  nav>.iS{
+    background-color: #FCA311;
+    border-radius: 5%;
+    margin: 20px;
+    height: 14vh;
+    width: 350px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  nav>.iS .iniciarSesion{
+    text-align: center;
+    width: 20%;
+    height: 33%;
+    position: absolute;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+  nav>.iS .iniciarSesion p{
+    font-size: 36px;
+    text-align: center;
+    margin-top: 1.5%;
+  }
+  nav>.iS .profesor{
+    width: 20%;
+    height: 66%;
+    top: 32%;
+    right: 15%;
+    display: flex;
+    position: absolute;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition-property: text-decoration;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+  }
+  nav>.iS .profesor:hover{
+    text-decoration: overline underline;
+    cursor: pointer;
+  }
+  nav>.iS .profesor p{
+    font-size: 36px;
+    text-align: center;
+    width: 50%;
+    align-self: center;
+
+  }
+  nav>.iS .alummno{
+    background-color: #E5E5E5;
+    width: 18%;
+    height: 50%;
+    top: 34%;
+    right: 2.05%;
+    border-bottom-right-radius: 5%;
+    display: flex;
+    position: absolute;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition-property: text-decoration;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+  }
+  nav>.iS .alummno:hover{
+    text-decoration: overline underline;
+    cursor: pointer;
+  }
+  nav>.iS .alummno p{
+    font-size: 36px;
+    text-align: center;
+    background-color: #E5E5E5;
+    width: 50%;
+    border-bottom-right-radius: 5%;
+    align-self: center;
+    margin-left: 15%;
+  }
+  /*---------------------FOOTER-----------------*/
+  footer{
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: #14213D;
+    color: rgb(255, 255, 255);
+    width: 100% ;
+    height: auto;
+    position: absolute;
+    margin-left: -8px;
+    margin-bottom: -20px;
+  }
+  .contacto{
+    font-size: 64px;
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+  }
+  .logo{
+    width: 100%;
+    padding: 50px;
+  }
+  .logo>img{
+    width: 100%;
+  }
+  .info{
+    font-size: 48px;
+    width: 50%;
+    padding: 50px;
+  }
+  .redes{
+    width: 90%;;
+    align-self: center;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+  }
+  .redes>a img{
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+  }
+  .direccion{
+    width: 100%;
+    align-self: center;
+  }
+}
+@media(min-width: 401px) and (orientation: landscape) and (min-height: 701px){/*ESCRITORIO*/
+  /*-----------------CONTENIDO DE LA PÁGINA-------------------*/
+  .container{
+    display: flex;
+    flex-flow: column wrap;
+    width: 98vw;
+    align-items: center;
+    background-color: #E5E5E5;
+    margin-top: 18vh;
+    margin-bottom: 0vh;
+    margin-left: 0.5vw;
+    z-index: 89;
+  }
+  .creditos{
+    width: 85%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .titulo{
+    background-color: #14213D;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 1;
+    padding: 20px;
+    z-index: 99;
+  }
+  .inicio{
+    font-size: 48px;
+  }
+  .categoria{
+    font-size: 24px;
+  }
+  .textos{
     background-color: rgb(255, 63, 27);
+    text-align: center;
+    font-size: 48px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-flow: column wrap;
+    animation-name: fondo;
+    animation-duration: 15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    z-index: 90;
   }
-}
-.textos>span{
-  position: absolute;
-  align-self: center;
-  z-index: 87;
-  margin-top: 50%;
-  animation-name: desplazamiento;
-  animation-duration: 15s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-}
-@keyframes desplazamiento {
-  0%{
+  @keyframes fondo {
+    0%{
+      background-color: rgb(255, 63, 27);
+    }
+    15%{
+      background-color: rgb(250, 255, 27);
+    }
+    30%{
+      background-color: rgb(52, 255, 27);
+    }
+    45%{
+      background-color: rgb(27, 255, 248);
+    }
+    60%{
+      background-color: rgb(27, 84, 255);
+    }
+    75%{
+        background-color: rgb(223, 27, 255);
+    }
+    90%{
+      background-color: rgb(221, 40, 40);
+    }
+    93%{
+      background-color: rgb(61, 78, 233);
+    }
+    96%{
+      background-color: rgb(61, 233, 109);
+    }
+    100%{
+      background-color: rgb(255, 63, 27);
+    }
+  }
+  .textos>span{
+    position: absolute;
+    align-self: center;
+    z-index: 87;
     margin-top: 50%;
+    animation-name: desplazamiento;
+    animation-duration: 15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
-  15%{
-    margin-top: 30%;
+  @keyframes desplazamiento {
+    0%{
+      margin-top: 50%;
+    }
+    15%{
+      margin-top: 30%;
+    }
+    30%{
+      margin-top: 10%;
+    }
+    45%{
+      margin-top: -10%;
+    }
+    60%{
+      margin-top: -30%;
+    }
+    75%{
+      margin-top: -50%;
+    }
+    93%{
+      margin-top: -30%;
+    }
+    96%{
+      margin-top: 10%;
+    }
+    100%{
+      margin-top: 50%;
+    }
   }
-  30%{
-    margin-top: 10%;
+  .container2{
+    z-index: 99;
+    background-color: #E5E5E5;
+    width: 90%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
   }
-  45%{
-    margin-top: -10%;
+  form{
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    align-items: center;
+    align-self: center;
   }
-  60%{
-    margin-top: -30%;
+  button{
+    height: 100px;
+    width: 80%;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 13px;
+    background-color: #FCA311;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
   }
-  75%{
-    margin-top: -50%;
+  .link{
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding-top: 13px;
   }
-  93%{
-    margin-top: -30%;
+  button:hover{
+    background-color: #b88026;
   }
-  96%{
-    margin-top: 10%;
+  /*------------------BARRA DE NAVEGACIÓN---------------------*/
+  header>nav{
+    height: 18vh;
+    width: 100vw;
+    background-color: #14213D;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    z-index: 100;
   }
-  100%{
-    margin-top: 50%;
+  nav>.crearEncuesta{
+    background-color: #FCA311;
+    margin: 20px;
+    border-radius: 5%;
+    width: 25vw;
+    height: 14vh;
+    text-align: center;
+    margin-right: 10%;
   }
-}
-.container2{
-  z-index: 99;
-  background-color: #E5E5E5;
-  width: 90%;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-}
-form{
-  display: flex;
-  flex-flow: column wrap;
-  width: 100%;
-  align-items: center;
-  align-self: center;
-}
-button{
-  height: 100px;
-  width: 80%;
-  font-size: 48px;
-  text-align: center;
-  margin-bottom: 13px;
-  background-color: #FCA311;
-  border: none;
-  border-radius: 5%;
-  cursor: pointer;
-  transition-property: background-color;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-}
-.link{
-  width: 100%;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  padding-top: 13px;
-}
-button:hover{
-  background-color: #b88026;
-}
-/*------------------BARRA DE NAVEGACIÓN---------------------*/
-header>nav{
-  height: 18vh;
-  width: 100vw;
-  background-color: #14213D;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  display: flex;
-  flex-flow: row nowrap;
-  z-index: 100;
-}
-nav>.crearEncuesta{
-  background-color: #FCA311;
-  margin: 20px;
-  border-radius: 5%;
-  width: 25vw;
-  height: 14vh;
-  text-align: center;
-  margin-right: 10%;
-}
-nav>.crearEncuesta p{
-  font-size: 58px;
-  margin-top: 1.5%;
-}
-nav>.unirseEncuesta{
-  background-color: #FCA311;
-  margin: 20px;
-  border-radius: 5%;
-  width: 25vw;
-  height: 14vh;
-  text-align: center;
-  margin-right: 10%;
-}
-nav>.unirseEncuesta p{
-  font-size: 55px;
-  margin-top: 1.5%;
-}
-.miPerfil{
-  width: 25vw;
-  height: 14vh;
-  display: flex;
-  flex-flow: row wrap;
-  background-color: #FCA311;
-  border-radius: 5%;
-  margin: 20px;
-}
-.mP{
-  width: 60%;
-  height: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  margin: 12px;
-  display: flex;
-  align-items: center;
-}
-.fotoPerfilMio{
-  width: 115px;
-  height: 115px;
-  margin-top: -20px;
-}
-.fotoPerfilMio>img{
-  border-radius: 50%;
-  width: 115px;
-  height: 115px;
-}
-.textoMiPerfil{
-  text-align: center;
-  margin-left: 2.5em;
-}
-.textoMiPerfil>span{
-  font-size: 24px;
-}
-.cerarsesion{
-  width: 35%;
-  background-color: #E5E5E5;
-  height: 14vh;
-  border-top-right-radius: 5%;
-  border-bottom-right-radius: 5%;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-}
-.CSTexto{
-  text-align: center;
-}
-.CSTexto>span{
-  font-size: 24px;
-  padding: 1em;
-}
-/*---------------------FOOTER-----------------*/
-footer{
-  display: flex;
-  flex-flow: row nowrap;
-  background-color: #14213D;
-  color: rgb(255, 255, 255);
-  width: 100% ;
-  height: auto;
-  position: absolute;
-  margin-left: -8px;
-  margin-bottom: -20px;
-  z-index: 100;
-}
-.contacto{
-  font-size: 64px;
-  width: 50%;
-  padding: 50px;
-}
-.logo{
-  width: 90%;
-  padding: 50px;
-}
-.logo>img{
-  width: 100%;
-}
-.info{
-  font-size: 48px;
-  width: 50%;
-  padding: 50px;
+  nav>.crearEncuesta p{
+    font-size: 58px;
+    margin-top: 1.5%;
+  }
+  nav>.unirseEncuesta{
+    background-color: #FCA311;
+    margin: 20px;
+    border-radius: 5%;
+    width: 25vw;
+    height: 14vh;
+    text-align: center;
+    margin-right: 10%;
+  }
+  nav>.unirseEncuesta p{
+    font-size: 55px;
+    margin-top: 1.5%;
+  }
+  .miPerfil{
+    width: 25vw;
+    height: 14vh;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #FCA311;
+    border-radius: 5%;
+    margin: 20px;
+  }
+  .mP{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 12px;
+    display: flex;
+    align-items: center;
+  }
+  .fotoPerfilMio{
+    width: 115px;
+    height: 115px;
+    margin-top: -20px;
+  }
+  .fotoPerfilMio>img{
+    border-radius: 50%;
+    width: 115px;
+    height: 115px;
+  }
+  .textoMiPerfil{
+    text-align: center;
+    margin-left: 2.5em;
+  }
+  .textoMiPerfil>span{
+    font-size: 24px;
+  }
+  .cerarsesion{
+    width: 35%;
+    background-color: #E5E5E5;
+    height: 14vh;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  .CSTexto{
+    text-align: center;
+  }
+  .CSTexto>span{
+    font-size: 24px;
+    padding: 1em;
+  }
+  /*---------------------FOOTER-----------------*/
+  footer{
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: #14213D;
+    color: rgb(255, 255, 255);
+    width: 100% ;
+    height: auto;
+    position: absolute;
+    margin-left: -8px;
+    margin-bottom: -20px;
+  }
+  .contacto{
+    font-size: 64px;
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+  }
+  .logo{
+    width: 100%;
+    padding: 50px;
+  }
+  .logo>img{
+    width: 100%;
+  }
+  .info{
+    font-size: 48px;
+    width: 50%;
+    padding: 50px;
+  }
+  .redes{
+    width: 90%;;
+    align-self: center;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+  }
+  .redes>a img{
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+  }
+  .direccion{
+    width: 100%;
+    align-self: center;
+  }
 }

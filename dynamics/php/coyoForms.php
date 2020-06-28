@@ -13,15 +13,15 @@ if(isset($_SESSION['profesor']) || isset($_SESSION['alumno']) || isset($_SESSION
     }
     //y se imprime un nav
     echo "<ul>
-                <li><a href='#'>Crear encuesta</a></li>
-                <li><a href='#'>Contestar encuesta</a></li>
-                <li><a href='#'>Mi perfil</a></li>
+                <li><a href='generaencu.html'>Crear encuesta</a></li>
+                <li><a href='../dynamics/php/resoluencuesta.php'>Contestar encuesta</a></li>
+                <li><a href='miPerfil.html'>Mi perfil</a></li>
                 <li><a href='#' id='cerrarSesion'>Cerrar sesión</a></li>
             </ul>";
 }else{
     //si no existe se imprime otro nav
     echo "  <ul>
-                <li><a href='#'>Contestar encuesta</a></li>
+                <li><a href='../dynamics/php/resoluencuesta.php'>Contestar encuesta</a></li>
                 <li><a href='registrousuario.html'>Registrate</a></li>
                 <li><a href='iniciosesion.html'>Ingresar</a></li>
             </ul>";

@@ -5,25 +5,25 @@ include("config.php");
 $conexion = connectDB2("p6_opina");
 //Si no se encuentra la conexion
 if(!$conexion) {
-//Marcara los errores que hay en la conexion
-echo mysqli_connect_error()."<br>";
-echo mysqli_connect_errno()."<br>";
-//Para salir
-exit();
+    //Marcara los errores que hay en la conexion
+    echo mysqli_connect_error()."<br>";
+    echo mysqli_connect_errno()."<br>";
+    //Para salir
+    exit();
 }
 //Si encontro la conexion
 else {
-    //Definir con variables los datos que se reciben del formulario
-    $RFC= strtoupper($_POST['RFC']);
-    $NumTrab= $_POST['NumTrab'];
-    $Nombre= strtoupper($_POST['NombreProf']);
-    $ApPt= strtoupper($_POST['apPaternoProf']);
-    $ApMt= strtoupper($_POST['apMaternoProf']);
-    $Sexo= $_POST['sexo'];
-    $Nacimiento= $_POST['nacimiento'];
-    $Mail= $_POST['mail'];
-    $Status= "No_suspendida";
-    $Contraseña=$_POST['passProf'];
+//Definir con variables los datos que se reciben del formulario
+$CURP= strtoupper($_POST['CURP']);
+$NumCuenta= $_POST['NumCuenta'];
+$Nombre= strtoupper($_POST['NombreAl']);
+$ApPt= strtoupper($_POST['apPaternoAl']);
+$ApMt= strtoupper($_POST['apMaternoAl']);
+$Sexo= $_POST['sexo'];
+$Nacimiento= $_POST['nacimiento'];
+$Mail= $_POST['mail'];
+$Status= "No_suspendida";
+$Contraseña=$_POST['passAl'];
     //Declarar en una variable la letra del arreglo que se necesite para poder validar el RFC
     $LetraName= $Nombre[0];
     $LetraAptPat1= $ApPt[0];
@@ -35,23 +35,25 @@ else {
     $Mes2 = $Nacimiento [6];
     $Dia1 = $Nacimiento [8];
     $Dia2 = $Nacimiento [9];
+    $IniSexo = $Sexo [0];
+
     //Declarar las varibles que se van a comparar del RFC que se recibio para compararlos con el nombre y fecha de nacimiento
-    $RFC1 = $RFC[0];
-    $RFC2 = $RFC[1];
-    $RFC3 = $RFC[2];
-    $RFC4 = $RFC[3];
-    $RFC5 = $RFC[4];
-    $RFC6 = $RFC[5];
-    $RFC7 = $RFC[6];
-    $RFC8 = $RFC[7];
-    $RFC9 = $RFC[8];
-    $RFC10 = $RFC[9];
+    $CURP1 = $CURP[0];
+    $CURP2 = $CURP[1];
+    $CURP3 = $CURP[2];
+    $CURP4 = $CURP[3];
+    $CURP5 = $CURP[4];
+    $CURP6 = $CURP[5];
+    $CURP7 = $CURP[6];
+    $CURP8 = $CURP[7];
+    $CURP9 = $CURP[8];
+    $CURP10 = $CURP[9];
+    $CURP11 = $CURP[10];
     //Declarar las varibales que tendran los valores de los arrys concatenados
-    $Verifica = $LetraAptPat1.$LetraAptPat2.$letraAptMat.$LetraName.$Anio1.$Anio2.$Mes1.$Mes2.$Dia1.$Dia2;
-    $RFCform = $RFC1.$RFC2.$RFC3.$RFC4.$RFC5.$RFC6.$RFC7.$RFC8.$RFC9.$RFC10;
-    if($Verifica == $RFCform){
-        //La consulta que se realizara para ver si el usuario existe
-        $cons = "SELECT * FROM usuario WHERE Número_de_cuenta_o_trabajador='$NumTrab'";
+    $Verifica = $LetraAptPat1.$LetraAptPat2.$letraAptMat.$LetraName.$Anio1.$Anio2.$Mes1.$Mes2.$Dia1.$Dia2.$IniSexo;
+    $CURPform = $CURP1.$CURP2.$CURP3.$CURP4.$CURP5.$CURP6.$CURP7.$CURP8.$CURP9.$CURP10.$CURP11;
+    if($Verifica == $CURPform){
+        $cons = "SELECT * FROM usuario WHERE Número_de_cuenta_o_trabajador ='$NumCuenta'";
         //Ver si se pudo hacer la consulta con la conexion
         $result = $conexion -> query($cons);
         //Ver si existe un registro en la Base de Datos
@@ -73,8 +75,8 @@ else {
                 " ha sido subido";
                 //Variable para guardar el nombre de la imagen
                 $Image= basename( $_FILES['imagenperfil']['name']);
-                //Hacer una insercion de los valores que se den
-                $sql = "INSERT INTO usuario VALUES ('$NumTrab','$Nombre', '$ApPt', '$ApMt', AES_ENCRYPT('$Mail','password') , '$Sexo', '$Status', AES_ENCRYPT('$RFC','password'), '$Nacimiento', AES_ENCRYPT('$Contraseña','password'), '$Image')";
+                //Hacer una insercion de los valores que se dijan
+                $sql = "INSERT INTO usuario VALUES ('$NumCuenta','$Nombre', '$ApPt', '$ApMt', AES_ENCRYPT('$Mail','password') , '$Sexo', '$Status', AES_ENCRYPT('$CURP','password'), '$Nacimiento', AES_ENCRYPT('$Contraseña','password'), '$Image')";
                 //Si se logro la insercion con la conexion hara el if
                 if(mysqli_query($conexion, $sql)){
                     //se crea cookie exitoso
@@ -82,27 +84,32 @@ else {
                     setcookie("Exitoso",$_COOKIE['Exitoso']);
                     //Se redireccionara a iniciosesion .html
                     header("Location: ../../templates/iniciosesion.html");
-                }else{
+                }
+                else{
                     //se crea cookie error
                     $_COOKIE['Error'] = 1;
                     setcookie("Error",$_COOKIE['Error']);
                     //Se redireccionara a registrousuario.html
                     header("Location: ../../templates/registrousuario.html");
                 }
-            }else{
+            }
+            else{
                 //se crea cookie errorImg
                 $_COOKIE['ErrorImg'] = 1;
                 setcookie("ErrorImg",$_COOKIE['ErrorImg']);
                 //Se redireccionara a registrousuario.html
                 header("Location: ../../templates/registrousuario.html");
+                //echo "No se pudo subir la imagen, trate de nuevo, usando los formatos requridos!";
             }
         }
-    }else{
-        //se crea cookie datosNo
-        $_COOKIE['DatosNo'] = 1;
-        setcookie("DatosNo",$_COOKIE['DatosNo']);
-        //Se redireccionara a registrousuario.html
-        header("Location: ../../templates/registrousuario.html");  
+        else{
+            //se crea cookie datosNo
+            $_COOKIE['DatosNo'] = 1;
+            setcookie("DatosNo",$_COOKIE['DatosNo']);
+            //Se redireccionara a registrousuario.html
+            header("Location: ../../templates/registrousuario.html");            
+            //echo"Tus datos no coinciden, porfavor verificalos<br>";
+        }
     }
-}
+}         
 ?>

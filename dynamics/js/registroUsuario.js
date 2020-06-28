@@ -91,3 +91,11 @@ aRegresar.addEventListener("click", function () {
     fTipo.classList.remove("desaparecido");
     aRegresar.classList.add("desaparecido");
 });
+
+/*
+function surgeMenu(){
+    document.getElementById(Menu).style.display="block";
+}
+function meteteMenu(){
+    document.getElementById(Menu).style.display="none";
+}       */

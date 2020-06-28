@@ -1,6 +1,7 @@
 <?php
   //Esta variable deberá obtenerse del usuario actual
-  $creador = "353535355";//Temporal
+  session_start();
+  $creador = '$_SESSION['Numero']';//Temporal
   //Inclusión del archivo de coniguración
   include "config.php";
   //Realización de la conexión

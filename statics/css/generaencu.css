@@ -1,10 +1,3 @@
-#columnaFor{
-  display: grid;
-  grid-template-columns: auto auto;
-}
-#botCont{
-  padding-top: 4%;
-}
 .imgImpor{
   border: 2px solid black;
   width: 25%;
@@ -22,4 +15,11 @@
 }
 .recuadrotexto{
   border: 2px solid black;
+}
+#columnaFor{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+#botCont{
+  padding-top: 4%;
 }
