@@ -1,0 +1,25 @@
+#columnaFor{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+#botCont{
+  padding-top: 4%;
+}
+.imgImpor{
+  border: 2px solid black;
+  width: 25%;
+}
+.imgNoImpor{
+  border: 1px solid black;
+  width: 20%;
+}
+.imgPregBord{
+  border: 3px solid black;
+}
+.descripcion{
+  border: 1px solid black
+  background-color: #BDBDBD;
+}
+.recuadrotexto{
+  border: 2px solid black;
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="../../statics/media/img/CoyoFormsIcono.ico" />
+    <link rel="stylesheet" href="../../statics/css/registroAlumno.css">
+    <title>Registro Alumnos  | CoyoForms</title>
+  </head>
+  <body>
+    <header>
+      <nav> <!-- Barra de navegación  -->
+        <div class="unirseEncuesta">
+          <p>Unirse a una Encuesta</p>
+        </div>
+        <div class="iS">
+          <a href="inicioSesionDirigir.html">
+          <div class="iniciarSesion">
+            <p>Iniciar Sesión</p>
+          </div>
+          </a>
+          <a href="inicioSesionProfe.html">
+          <div class="profesor">
+            <p>Profesor</p>
+          </div>
+          </a>
+          <a href="inicioSesionAlumno.html">
+          <div class="alummno">
+            <p>Alumno</p>
+          </div>
+          </a>
+        </div>
+      </nav>
+    </header>
+      <section class="container"> <!-- Cuerpo de la página -->
+        <div class="titulo"> <!-- título de la página (rectángulo Azul) -->
+          <div class="registro">
+            <span>Registro</span>
+            <div class="categoria">
+              <span>Alumno Nuevo</span>
+            </div>
+          </div>
+        </div>
+        <form action="index.html" method="post">
+          <div class="input">
+            <input type="number" name="numeroDeCuenta" placeholder="Número de Cuenta" autocomplete="off">
+          </div>
+          <!--
+          <div class="grupo">
+            <div class="grupoTexto">
+              <span>Grupo</span>
+            </div>
+            <select name="grupo">
+              <optgroup label="Cuarto">
+                <option value="401">401</option>
+                <option value="402">402</option>
+                <option value="403">403</option>
+                <option value="404">404</option>
+                <option value="405">405</option>
+                <option value="406">406</option>
+                <option value="407">407</option>
+                <option value="408">408</option>
+                <option value="409">409</option>
+                <option value="410">410</option>
+                <option value="411">411</option>
+                <option value="412">412</option>
+                <option value="413">413</option>
+                <option value="414">414</option>
+                <option value="415">415</option>
+                <option value="416">416</option>
+                <option value="417">417</option>
+                <option value="451">451</option>
+                <option value="452">452</option>
+                <option value="453">453</option>
+                <option value="454">454</option>
+                <option value="455">455</option>
+                <option value="456">456</option>
+                <option value="457">457</option>
+                <option value="458">458</option>
+                <option value="459">459</option>
+                <option value="460">460</option>
+                <option value="461">461</option>
+                <option value="462">462</option>
+                <option value="463">463</option>
+                <option value="464">464</option>
+                <option value="465">465</option>
+                <option value="466">466</option>
+              </optgroup>
+              <optgroup label="Quinto">
+                <option value="501">501</option>
+                <option value="502">502</option>
+                <option value="503">503</option>
+                <option value="504">504</option>
+                <option value="505">505</option>
+                <option value="506">506</option>
+                <option value="507">507</option>
+                <option value="508">508</option>
+                <option value="509">509</option>
+                <option value="510">510</option>
+                <option value="511">511</option>
+                <option value="512">512</option>
+                <option value="513">513</option>
+                <option value="514">514</option>
+                <option value="515">515</option>
+                <option value="516">516</option>
+                <option value="517">517</option>
+                <option value="518">518</option>
+                <option value="551">551</option>
+                <option value="552">552</option>
+                <option value="553">553</option>
+                <option value="554">554</option>
+                <option value="555">555</option>
+                <option value="556">556</option>
+                <option value="557">557</option>
+                <option value="558">558</option>
+                <option value="559">559</option>
+                <option value="560">560</option>
+                <option value="561">561</option>
+                <option value="562">562</option>
+                <option value="563">563</option>
+              </optgroup>
+              <optgroup label="Sexto">
+                <option value="601">601</option>
+                <option value="602">602</option>
+                <option value="603">603</option>
+                <option value="604">604</option>
+                <option value="605">605</option>
+                <option value="606">606</option>
+                <option value="607">607</option>
+                <option value="608">608</option>
+                <option value="609">609</option>
+                <option value="610">610</option>
+                <option value="611">611</option>
+                <option value="612">612</option>
+                <option value="613">613</option>
+                <option value="614">614</option>
+                <option value="615">615</option>
+                <option value="616">616</option>
+                <option value="617">617</option>
+                <option value="618">618</option>
+                <option value="619">619</option>
+                <option value="651">651</option>
+                <option value="652">652</option>
+                <option value="653">653</option>
+                <option value="654">654</option>
+                <option value="655">655</option>
+                <option value="656">656</option>
+                <option value="657">657</option>
+                <option value="658">658</option>
+                <option value="659">659</option>
+                <option value="660">660</option>
+                <option value="661">661</option>
+                <option value="662">662</option>
+                <option value="663">663</option>
+                <option value="664">664</option>
+              </optgroup>
+            </select>
+          </div>  -->
+          <input class="chico1" type="text" name="nombre" placeholder="Nombre" autocomplete="off">
+          <input class="chico2" type="text" name="nombre" placeholder="Apellido Pat." autocomplete="off">
+          <input class="chico3" type="text" name="nombre" placeholder="Apellido Mat." autocomplete="off">
+          <input class="chico4" type="date" name="nacimiento" placeholder="Fecha de Nacimiento" autocomplete="off">
+          <div class="genero">
+            <div class="generoTexto">
+              <span>Género</span>
+            </div>
+            <div class="generoOpciones">
+              <div class="check">
+              <input type="radio" name="genero" value="masculino" title="Por favor solo selecione Una Opción, Gracias"><span>Masculino</span>
+            </div>
+            <div class="check">
+              <input type="radio" name="genero" value="femenino" title="Por favor solo selecione Una Opción, Gracias"><span>Femenino</span>
+            </div>
+            <!--
+            <div class="check">
+              <input type="checkbox" name="otro" title="Por favor solo selecione Una Opción, Gracias">Otro/Prefiero No Decirlo
+            </div>
+              -->
+            </div>
+          </div>
+          <input type="text" name="curp" placeholder="CURP" autocomplete="off">
+          <input type="text" name="correo" placeholder="Correo Electrónico" autocomplete="off">
+          <input type="password" name="contrasenia" placeholder="Contraseña" title="Su contraseña debe contener mínimo 8 caracteres, 1 mayúscula, 1 signo de puntuación y 1 número">
+          <input class="enviar" type="submit" name="registrarse" value="Registrarse">
+        </form>
+      </section>
+      <footer>
+        <div class="contacto">
+          <span>Datos de Contacto</span>
+          <div class="logo">
+            <img src="../../statics/media/img/CoyoFormsLogo.jpg" alt="">
+          </div>
+        </div>
+        <div class="info">
+          <p>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
+          <p>Información</p>
+          <p>Hipervínculo a la página de Créditos</p>
+          <p>Demás Cosas</p>
+        </div>
+      </footer>
+  </body>
+</html>
