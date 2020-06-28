@@ -108,6 +108,11 @@
         <input type = 'submit' value = 'Enviar'>
         </form>";
       }
+      else if(($fechaActuId < $columna[8]))&&($fechaActuId > $columna[7])))
+      {
+        $restFech = "UPDATE encuesta SET Estado=\"abierta\" WHERE ID_Encuesta=\"$codEspe\"";
+        $actuali = mysqli_query($conexion, $restFech);
+      }
       else if($fechaActuId >= $columna[8])
       {
         //En caso de detectar que se ha acabado el tiempo de la encuesta, se cambia el estado a cerrada
