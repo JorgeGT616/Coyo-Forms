@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="../../statics/media/img/CoyoFormsIcono.ico" />
+    <link rel="stylesheet" href="../statics/css/miPerfil.css">
+    <title>Mi Perfil  |  CoyoForms</title>
+  </head>
+  <body>
+    <header>
+      <nav> <!-- Barra de navegación  -->
+        <div class="crearEncuesta">
+          <p>Crear una Encuesta</p>
+        </div>
+        <div class="unirseEncuesta">
+          <p>Unirse a una Encuesta</p>
+        </div>
+        <div class="miPerfil">
+          <div class="mP">
+            <div class="fotoPerfilMio">
+              <img src="https://avatarfiles.alphacoders.com/240/240882.png" alt="Tu Foto de Perfil">
+            </div>
+            <div class="textoMiPerfil">
+              <span>Mi Perfil</span>
+            </div>
+          </div>
+          <div class="cerarsesion">
+            <div class="CSTexto">
+              <span>Cerrar Sesión</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="container">
+      <div class="containerBorders">
+        <div class="titulo">
+          <span>Información Personal</span>
+        </div>
+        <!-- FOTO DE PERFIL  -->
+        <div class="fotoPerfil">
+          <div class="img">
+            <img src="https://avatarfiles.alphacoders.com/240/240882.png" alt="Tu Foto de Perfil">
+          </div>
+          <div class="opcionesFoto">
+            <span>Foto de Perfil</span>
+            <div class="botonCambiarFoto">
+              <button type="button" name="cambiarFotoDePerfil">Cambiar Foto</button>
+            </div>
+          </div>
+        </div>
+        <!-- INFORMACIÓN PERSONAL  -->
+        <form action="index.html" method="post">
+          <div class="nombreCampo">
+            <span>Nombre Completo</span>
+          </div>
+          <input type="text" name="nombre" value="Alterame">
+          <div class="nombreCampo">
+            <span>Fecha de Nacimiento</span>
+          </div>
+          <input type="date" name="nacimiento" value="Alterame">
+          <div class="nombreCampo">
+            <span>Número de Cuenta</span>
+          </div>
+          <input type="number" name="numeroDeCuenta" value="Alterame" placeholder="Numero de Cuenta">
+          <div class="botonCambiar">
+            <div class="nombreCampoAlterable">
+              <span>Correo Electrónico</span>
+            </div>
+            <div class="cambiar">
+              <button type="button" name="cambiarCorreo">Cambiar Correo</button>
+            </div>
+          </div>
+          <input type="text" name="correo" value="Alterame">
+          <div class="botonCambiar">
+            <div class="nombreCampoAlterable">
+              <span>Contrseña</span>
+            </div>
+            <div class="cambiar">
+              <button type="button" name="cambiarContrasenia">Cambiar Contraseña</button>
+            </div>
+          </div>
+          <input type="password" name="contrasenia" value="Alterame">
+          <div class="nombreCampo">
+            <span>Tipo de Usuario</span>
+          </div>
+          <input type="text" name="tipoDeUsuario" value="Alterame">
+        </form>
+        <!-- INFRMACIÓN DE TUS ENCUESTAS -->
+        <div class="titulo">
+          <span>Información de tus Encuestas</span>
+        </div>
+        <div class="graficaEncuestas">
+          <span>Encuestas contestadas (Gráficas)</span>
+        </div>
+        <div class="encuesta">
+          <span>Encuestas....</span>
+        </div>
+    </div>
+    </section>
+    <footer>
+      <div class="contacto">
+        <span>Datos de Contacto</span>
+        <div class="logo">
+          <img src="../../statics/media/img/CoyoFormsLogo.jpg" alt="">
+        </div>
+      </div>
+      <div class="info">
+        <p>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
+        <p>Información</p>
+        <p>Hipervínculo a la página de Créditos</p>
+        <p>Demás Cosas</p>
+      </div>
+    </footer>
+  </body>
+</html>

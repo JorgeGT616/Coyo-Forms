@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="../statics/media/img/CoyoFormsIcono.ico" />
+    <link rel="stylesheet" href="../statics/css/registroAlumno.css">
+    <title>Registro Profesores  | CoyoForms</title>
+  </head>
+  <body>
+    <header>
+      <nav> <!-- Barra de navegación  -->
+        <div class="unirseEncuesta">
+          <p>Unirse a una Encuesta</p>
+        </div>
+        <div class="iS">
+          <a href="inicioSesionDirigir.html">
+          <div class="iniciarSesion">
+            <p>Iniciar Sesión</p>
+          </div>
+          </a>
+          <a href="inicioSesionProfe.html">
+          <div class="profesor">
+            <p>Profesor</p>
+          </div>
+          </a>
+          <a href="inicioSesionAlumno.html">
+          <div class="alummno">
+            <p>Alumno</p>
+          </div>
+          </a>
+        </div>
+      </nav>
+    </header>
+      <section class="container"> <!-- Cuerpo de la página -->
+        <div class="titulo"> <!-- título de la página (rectángulo Azul) -->
+          <div class="registro">
+            <span>Registro</span>
+            <div class="categoria">
+              <span>Profesor Nuevo</span>
+            </div>
+          </div>
+        </div>
+        <form action="index.html" method="post">
+          <div class="input">
+            <input type="number" name="numeroDeTrabajador" placeholder="Número de Trabajador" autocomplete="off">
+          </div>
+          <input class="chico1" type="text" name="nombre" placeholder="Nombre" autocomplete="off">
+          <input class="chico2" type="text" name="nombre" placeholder="Apellido Pat." autocomplete="off">
+          <input class="chico3" type="text" name="nombre" placeholder="Apellido Mat." autocomplete="off">
+          <input class="chico4" type="date" name="nacimiento" placeholder="Fecha de Nacimiento" autocomplete="off">
+          <div class="genero">
+            <div class="generoTexto">
+              <span>Género</span>
+            </div>
+            <div class="generoOpciones">
+              <div class="check">
+              <input type="radio" name="genero" value="masculino" title="Por favor solo selecione Una Opción, Gracias"><span>Masculino</span>
+            </div>
+            <div class="check">
+              <input type="radio" name="genero" value="femenino" title="Por favor solo selecione Una Opción, Gracias"><span>Femenino</span>
+            </div>
+            <!--
+            <div class="check">
+              <input type="checkbox" name="otro" title="Por favor solo selecione Una Opción, Gracias">Otro/Prefiero No Decirlo
+            </div>
+              -->
+            </div>
+          </div>
+          <input type="text" name="rfc" placeholder="RFC" title="Por favor Coloque su RFC con Homoclave, Gracias" autocomplete="off">
+          <input type="text" name="correo" placeholder="Correo Electrónico" autocomplete="off">
+          <input type="password" name="contrasenia" placeholder="Contraseña" title="Su contraseña debe contener mínimo 8 caracteres, 1 mayúscula, 1 signo de puntuación y 1 número">
+          <input class="enviar" type="submit" name="registrarse" value="Registrarse">
+        </form>
+      </section>
+      <footer>
+        <div class="contacto">
+          <span>Datos de Contacto</span>
+          <div class="logo">
+            <img src="../../statics/media/img/CoyoFormsLogo.jpg" alt="">
+          </div>
+        </div>
+        <div class="info">
+          <p>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
+          <p>Información</p>
+          <p>Hipervínculo a la página de Créditos</p>
+          <p>Demás Cosas</p>
+        </div>
+      </footer>
+  </body>
+</html>
