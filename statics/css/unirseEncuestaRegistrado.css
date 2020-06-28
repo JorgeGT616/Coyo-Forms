@@ -1,0 +1,232 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../libs/fontawesome/FONTS/Roboto-Regular.ttf);
+}
+*{
+  font-family: "Roboto";
+}
+a{
+  cursor: pointer;
+}
+/*-----------------CONTENIDO DE LA PÁGINA-------------------*/
+
+.container{
+  background-color: #E5E5E5;
+  width: 33%;
+  height: 70vh;
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 19vh;
+  margin-bottom: 1vh;
+  margin-left: 33vw;
+}
+.titulo{
+  background-color: #14213D;
+  width: 100%;
+  height: auto;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 1;
+  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.inicio{
+  width: 100%;
+  font-size: 48px;
+}
+.mensaje{
+  width: auto;
+  height: auto;
+  font-size: 24px;
+  background-color: #FCA311;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.mensaje2{
+  width: auto;
+  height: auto;
+  font-size: 24px;
+  background-color: #ffffff;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+form{
+  width: 90%;
+  margin-left: 10%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+input{
+  height: 100px;
+  width: 90%;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 13px;
+}
+.unirse{
+  background-color: #FCA311;
+  font-size: 36px;
+  border: none;
+  border-radius: 5%;
+}
+.unirse2{
+  background-color: #FCA311;
+  font-size: 36px;
+  border: none;
+  border-radius: 5%;
+  width: 80%;
+  margin-left: 5%;
+}
+/*------------------BARRA DE NAVEGACIÓN---------------------*/
+header>nav{
+  height: 18vh;
+  width: 100vw;
+  background-color: #14213D;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-flow: row nowrap;
+  z-index: 100;
+}
+nav>.unirseEncuesta{
+  background-color: #FCA311;
+  margin: 20px;
+  margin-left: 5%;
+  border-radius: 5%;
+  width: 75vw;
+  height: 14vh;
+  text-align: center;
+}
+nav>.unirseEncuesta p{
+  font-size: 92px;
+  margin-top: 1.5%;
+}
+/*------------------BARRA DE NAVEGACIÓN---------------------*/
+header>nav{
+  height: 18vh;
+  width: 100vw;
+  background-color: #14213D;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-flow: row nowrap;
+  z-index: 100;
+}
+nav>.crearEncuesta{
+  background-color: #FCA311;
+  margin: 20px;
+  border-radius: 5%;
+  width: 24vw;
+  height: 14vh;
+  text-align: center;
+}
+nav>.crearEncuesta p{
+  font-size: 55px;
+  margin-top: 1.5%;
+}
+nav>.unirseEncuesta{
+  background-color: #FCA311;
+  margin: 20px;
+  border-radius: 5%;
+  width: 48vw;
+  height: 14vh;
+  text-align: center;
+}
+nav>.unirseEncuesta p{
+  font-size: 92px;
+  margin-top: 1.5%;
+}
+.miPerfil{
+  width: 22vw;
+  height: 14vh;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #FCA311;
+  border-radius: 5%;
+  margin: 20px;
+}
+.mP{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 12px;
+  display: flex;
+  align-items: center;
+}
+.fotoPerfilMio{
+  width: 115px;
+  height: 115px;
+  margin-top: -20px;
+}
+.fotoPerfilMio>img{
+  border-radius: 50%;
+  width: 115px;
+  height: 115px;
+}
+.textoMiPerfil{
+  text-align: center;
+  margin-left: 2.5em;
+}
+.textoMiPerfil>span{
+  font-size: 24px;
+}
+.cerarsesion{
+  width: 34.2%;
+  background-color: #E5E5E5;
+  height: 14vh;
+  border-top-right-radius: 5%;
+  border-bottom-right-radius: 5%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.CSTexto{
+  text-align: center;
+}
+.CSTexto>span{
+  font-size: 24px;
+  padding: 1em;
+}
+/*---------------------FOOTER-----------------*/
+footer{
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #14213D;
+  color: rgb(255, 255, 255);
+  width: 100% ;
+  height: auto;
+  position: absolute;
+  margin-left: -8px;
+  margin-bottom: -20px;
+}
+.contacto{
+  font-size: 64px;
+  width: 50%;
+  padding: 50px;
+}
+.logo{
+  width: 90%;
+  padding: 50px;
+}
+.logo>img{
+  width: 100%;
+}
+.info{
+  font-size: 48px;
+  width: 50%;
+  padding: 50px;
+}
