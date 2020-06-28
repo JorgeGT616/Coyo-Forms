@@ -47,7 +47,6 @@ CREATE TABLE `encuesta` (
 
 LOCK TABLES `encuesta` WRITE;
 /*!40000 ALTER TABLE `encuesta` DISABLE KEYS */;
-INSERT INTO `encuesta` VALUES (1,'Felicidad en la prepa',353535355,4,'Dudas que la vida sea una decepción? Deja de dudarlo y tenlo por seguro, ya que realmente lo es...','','abierta',2020062513,2020062916);
 /*!40000 ALTER TABLE `encuesta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,7 +77,6 @@ CREATE TABLE `opción` (
 
 LOCK TABLES `opción` WRITE;
 /*!40000 ALTER TABLE `opción` DISABLE KEYS */;
-INSERT INTO `opción` VALUES (1,'Sí','',1,1),(2,'No','',1,1),(3,'Sí','',2,1),(4,'No','',2,1),(5,'A veces','',2,1),(6,'Un día será','',2,1),(7,'Porque directamente lo eres','',3,1),(8,'Porque eres un exagerado','',3,1),(9,'Eres más miserable de lo que crees','',3,1),(10,'Sí','',4,1),(11,'Definitivamente','',4,1),(12,'No','',5,1),(13,'Jamás','',5,1),(14,'Jamás de los jamases','',5,1),(15,'Hoy no fío, mañana sí','',5,1);
 /*!40000 ALTER TABLE `opción` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,7 +106,6 @@ CREATE TABLE `pregunta` (
 
 LOCK TABLES `pregunta` WRITE;
 /*!40000 ALTER TABLE `pregunta` DISABLE KEYS */;
-INSERT INTO `pregunta` VALUES (1,'¿Hay una pregunta?',1,1,''),(2,'¿Quieres responder?',1,2,''),(3,'¿Por qué me siento tan miserab',1,3,''),(4,'¿Quieres llegar al final de es',1,4,''),(5,'¿Me perdonas por hacerte perde',1,5,'');
 /*!40000 ALTER TABLE `pregunta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -137,7 +134,6 @@ CREATE TABLE `respuesta` (
 
 LOCK TABLES `respuesta` WRITE;
 /*!40000 ALTER TABLE `respuesta` DISABLE KEYS */;
-INSERT INTO `respuesta` VALUES (1,353535355,2),(2,353535355,5),(3,353535355,7),(4,353535355,11),(5,353535355,15),(6,123456789,1),(7,123456789,5),(8,123456789,8),(9,123456789,11),(10,123456789,15);
 /*!40000 ALTER TABLE `respuesta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -198,7 +194,6 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (123456789,'Lolo','Lala','Gil','nose@estres.com','H','No_Suspendida','123456789ASDFGHJKL','0000-00-00','contrase�a','imagen.jpg'),(353535355,'Temporal','Temporalez','Temporalines','temporal@poruntiempo.com','H','No_Suspendida','TETT065794Cr&YTFtg','0000-00-00','s0yTeMp0r4!','imagenrandom.png');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -211,4 +206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-26 20:38:06
+-- Dump completed on 2020-06-28  5:48:10
