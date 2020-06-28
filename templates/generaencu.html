@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Generador de Encuestas</title>
+    <link rel="stylesheet" href="../statics/css/generaencu.css">
+  </head>
+  <body>
+    <div id="columnaFor">
+      <form enctype="multipart/form-data" action="../dynamics/php/procesaencu.php" method="post">
+        <div id="encabezado">
+          <h2>Nombre de encuesta: <input type="text" name="nombreEnc" value="" pattern='[A-Za-zÁÉÍÓÚáéíóú0-9¿?.,\s]+' title="Revise sus caracteres especiales" required maxlength="30"></h2>
+          Imagen: <input type="file" name="encuImg" value=""><br>
+          Inicio: <input type="date" name="encuFechaInic" value="" required> Hora: <input type="number" name="horInic" value="" max="23" min="0" required><br>
+          Vencimiento: <input type="date" name="encuFechaVenc" value="" required> Hora: <input type="number" name="horVenc" value="" max="23" min="0" required><br>
+          Categoría: <select name="encuCategoria" required>
+                <option value="1">Académico</option>
+                <option value="2">Cultura</option>
+                <option value="3">Deportes</option>
+                <option value="4">Ciencias</option>
+              </select>
+          <h3>Pregunta: <input type="text" name="preg1" value="" maxlength="30" required pattern='[A-Za-zÁÉÍÓÚáéíóú0-9¿?.,\s]+' title="Revise sus caracteres especiales"><br><input type="file" name="preg1Img" value=""></h3>
+        </div>
+        <div id="listaOpc">
+          Opción 1: <input type="text" name="opc11" value="" maxlength="30" required pattern='[A-Za-zÁÉÍÓÚáéíóú0-9¿?.,\s]+' title="Revise sus caracteres especiales"><input type="file" name="opc11Img" value=""><br>
+          Opción 2: <input type="text" name="opc21" value="" maxlength="30" required pattern='[A-Za-zÁÉÍÓÚáéíóú0-9¿?.,\s]+' title="Revise sus caracteres especiales"><input type="file" name="opc21Img" value="">
+        </div>
+        <div id="neopreg">
+        </div><br>
+        Descripción: <input type="text" name="descrEncu" pattern='[A-Za-zÁÉÍÓÚáéíóú0-9¿?.,\s]+' maxlength="200" minlength="50" title="Revise sus caracteres especiales" required><br>
+        <p><input type="submit" name="" value="Crear"></p>
+      </form>
+      <div id="botCont">
+        <br>
+        <div id="agregaPregBotCont">
+          <button id = "agregarPreg" onclick="agregarPreg()">Agregar Pregunta</button>
+        </div>
+        <span id="botonRemPreg1"></span><br>
+        <div id="contBotAgregOpc1">
+          <button id = "agregarOpc1" onclick="agregarOpc1()">Agregar Opción</button>
+        </div>
+        <span id = "botonRem1"></span>
+      </div>
+    </div>
+    <script src="../dynamics/js/generaencu.js"></script>
+  </body>
+</html>
