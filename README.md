@@ -30,3 +30,4 @@
 - El PIN para ingresar como admin dentro de la página es el mismo que se utiliza para ingresar a **Maria DB** como _Administrador_.
 - Es posible la consulta de los resultados de las preguntas de encuestas, a futuro se agregará la graficación de dichos resultados.:heavy_check_mark:
 - Se puede ver el perfil del usuario, pero su funcionalidad se piensa será implementada.:heavy_check_mark:
+- Cuando se baje el proyecto de master, es recomendable borrar las imágenes de ejemplo a excepción de la que se encuentra en subcarpeta dentro de la carpeta img, ya que con esa se mantiene el directorio de imágenes funcionando
