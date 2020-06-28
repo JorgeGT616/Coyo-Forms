@@ -1,8 +1,11 @@
 <?php
+  //variables para conexion
   $base="p6_opina";
+  //constantes para conexion
   define("DBUSER","Administrador");
   define("DBHOST","localhost");
   define("PASSWORD",'c0Y0op1n10nE$pR3p@6&');
+  //funciones
   function connect () {
     return mysqli_connect(DBHOST, DBUSER, PASSWORD);
   }
